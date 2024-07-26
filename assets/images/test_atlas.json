@@ -1,0 +1,528 @@
+{
+    "frames": [
+        {
+            "filename": "down_damage_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 0,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_attack_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 24,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_idle_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 0,
+                "y": 25
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_damage_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 24,
+                "y": 25
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_die_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 48,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_die_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 48,
+                "y": 25
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_attack_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 0,
+                "y": 50
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_die_4",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 24,
+                "y": 50
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_die_3",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 48,
+                "y": 50
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_idle_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 72,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_kick_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 72,
+                "y": 25
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_jump_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 72,
+                "y": 50
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_run_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 0,
+                "y": 75
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_kick_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 24,
+                "y": 75
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_jump_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 48,
+                "y": 75
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_walk_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 72,
+                "y": 75
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_walk_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 96,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_pull_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 96,
+                "y": 25
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_push_4",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 96,
+                "y": 50
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_pull_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 96,
+                "y": 75
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_win_4",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 0,
+                "y": 100
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_win_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 24,
+                "y": 100
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_jump_5",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 48,
+                "y": 100
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_win_3",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 72,
+                "y": 100
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_pull_3",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 96,
+                "y": 100
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_win_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 120,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_pull_4",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 120,
+                "y": 25
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_push_3",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 120,
+                "y": 50
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_push_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 120,
+                "y": 75
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_run_3",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 120,
+                "y": 100
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_jump_8",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 0,
+                "y": 125
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_jump_3",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 24,
+                "y": 125
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_jump_4",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 48,
+                "y": 125
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_jump_7",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 72,
+                "y": 125
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_walk_3",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 96,
+                "y": 125
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_run_4",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 120,
+                "y": 125
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_walk_4",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 144,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_jump_6",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 144,
+                "y": 25
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_push_1",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 144,
+                "y": 50
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "down_run_2",
+            "frame": {
+                "w": 24,
+                "h": 25,
+                "x": 144,
+                "y": 75
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}
