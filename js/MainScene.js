@@ -2,8 +2,20 @@ import Player from "./Player.js";
 
 let coworker_list = []
 let coworker_position_list = []
-let moved_coworker_list = []
 
+const MAXIMUM_COWORKER_NUMBER = 4
+
+const init_position_x = [60, 60, 170, 170]
+const init_position_y = [40, 110, 40, 110]
+
+let desk_object = {}
+let man1_obj = {}
+let man2_obj = {}
+let man3_obj = {}
+let man4_obj = {}
+let man5_obj = {}
+let random_coworker_number = []
+let random_coworker_list = []
 export default class MainScene extends Phaser.Scene {
     constructor() {
         super("MainScene");
@@ -17,52 +29,30 @@ export default class MainScene extends Phaser.Scene {
             frameWidth: 24,
             frameHeight: 24
         })
-        this.load.spritesheet('coworker1', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker2', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker3', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker4', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker5', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker6', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker7', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker8', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker9', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
-        this.load.spritesheet('coworker10', "../assets/images/princess.png", {
-            frameWidth: 24,
-            frameHeight: 38
-        })
+        for (let i = 0; i < MAXIMUM_COWORKER_NUMBER; i++) {
+            this.load.image('desk_object' + i, "../assets/desk2/desk_right_02.png")
+        }
+        for (let i = 0; i < MAXIMUM_COWORKER_NUMBER; i++) {
+            this.load.image('man1_obj' + i, "../assets/desk2/1.png")
+        }
+        for (let i = 0; i < MAXIMUM_COWORKER_NUMBER; i++) {
+            this.load.image('man2_obj' + i, "../assets/desk2/2.png")
+        }
+        for (let i = 0; i < MAXIMUM_COWORKER_NUMBER; i++) {
+            this.load.image('man3_obj' + i, "../assets/desk2/3.png")
+        }
+        for (let i = 0; i < MAXIMUM_COWORKER_NUMBER; i++) {
+            this.load.image('man4_obj' + i, "../assets/desk2/4.png")
+        }
+        for (let i = 0; i < MAXIMUM_COWORKER_NUMBER; i++) {
+            this.load.image('man5_obj' + i, "../assets/desk2/5.png")
+        }
 
 
         this.load.image("roomTiles", "assets/map/Room_Builder_Office_16x16.png");
         this.load.image("objectTiles", "assets/map/Modern_Office_16x16.png");
-        this.load.tilemapTiledJSON("map", "assets/map/map01.json");
-
+        this.load.tilemapTiledJSON("map", "assets/map/easy_map_01.json");
+        // this.load.tilemapTiledJSON("map", "assets/map/map01.json");
     }
 
     create() {
@@ -75,25 +65,16 @@ export default class MainScene extends Phaser.Scene {
 
         const background = map.createLayer("background", roomTileset, 0, 0);
         const wall = map.createLayer("wall", roomTileset, 0, 0);
-        const desk = map.createLayer("desk", objectTileset, 0, 0);
+        // const desk = map.createLayer("desk", objectTileset, 0, 0);
         const object = map.createLayer("object", objectTileset, 0, 0);
 
         wall.setCollisionByProperty({collides: true});
         object.setCollisionByProperty({collides: true});
-        desk.setCollisionByProperty({collides: true});
+        // desk.setCollisionByProperty({collides: true});
 
         this.matter.world.convertTilemapLayer(wall);
         this.matter.world.convertTilemapLayer(object);
-        this.matter.world.convertTilemapLayer(desk);
-
-        // this.player = new Player({
-        //     scene: this,
-        //     x: 100,
-        //     y: 100,
-        //     texture: "down_walk",
-        //     frame: "princess_idle_1"
-        // });
-        // this.add.existing(this.player);
+        // this.matter.world.convertTilemapLayer(desk);
 
         this.huh = this.add.image(0, 0, "huh")
         this.huh.setOrigin(0.0)
@@ -101,63 +82,70 @@ export default class MainScene extends Phaser.Scene {
         this.huh.scale = 0.1
         this.huh.alpha = 0;
 
-        this.player = this.matter.add.sprite(100, 100, "player1", null, {
+        this.player = this.matter.add.sprite(50, 50, "player1", null, {
             isSensor: false,
         })
-        this.coworker1 = this.add.sprite(40, 40, "coworker1")
-        this.coworker1.setOrigin(0, 0)
-
-        this.coworker2 = this.add.sprite(40, 90, "coworker2")
-        this.coworker2.setOrigin(0, 0)
-
-        this.coworker3 = this.add.sprite(40, 150, "coworker3")
-        this.coworker3.setOrigin(0, 0)
-
-        this.coworker4 = this.add.sprite(120, 40, "coworker4")
-        this.coworker4.setOrigin(0, 0)
-
-        this.coworker5 = this.add.sprite(120, 150, "coworker5")
-        this.coworker5.setOrigin(0, 0)
-
-        this.coworker6 = this.add.sprite(230, 40, "coworker6")
-        this.coworker6.setOrigin(0, 0)
-
-        this.coworker7 = this.add.sprite(200, 70, "coworker7")
-        this.coworker7.setOrigin(0, 0)
-
-        this.coworker8 = this.add.sprite(200, 100, "coworker8")
-        this.coworker8.setOrigin(0, 0)
-
-        this.coworker9 = this.add.sprite(270, 70, "coworker9")
-        this.coworker9.flipX = true
-        this.coworker9.setOrigin(0, 0)
-
-        this.coworker10 = this.add.sprite(270, 100, "coworker10")
-        this.coworker10.flipX = true
-        this.coworker10.setOrigin(0, 0)
-
-        coworker_list.push(this.coworker1)
-        coworker_list.push(this.coworker2)
-        coworker_list.push(this.coworker3)
-        coworker_list.push(this.coworker4)
-        coworker_list.push(this.coworker5)
-        coworker_list.push(this.coworker6)
-        coworker_list.push(this.coworker7)
-        coworker_list.push(this.coworker8)
-        coworker_list.push(this.coworker9)
-        coworker_list.push(this.coworker10)
-        coworker_position_list.push({x: this.coworker1.x, y: this.coworker1.y})
-        coworker_position_list.push({x: this.coworker2.x, y: this.coworker2.y})
-        coworker_position_list.push({x: this.coworker3.x, y: this.coworker3.y})
-        coworker_position_list.push({x: this.coworker4.x, y: this.coworker4.y})
-        coworker_position_list.push({x: this.coworker5.x, y: this.coworker5.y})
-        coworker_position_list.push({x: this.coworker6.x, y: this.coworker6.y})
-        coworker_position_list.push({x: this.coworker7.x, y: this.coworker7.y})
-        coworker_position_list.push({x: this.coworker8.x, y: this.coworker8.y})
-        coworker_position_list.push({x: this.coworker9.x, y: this.coworker9.y})
-        coworker_position_list.push({x: this.coworker10.x, y: this.coworker10.y})
-
-
+        for (let i = 0; i < MAXIMUM_COWORKER_NUMBER; i++) {
+            desk_object['desk_object' + i] =
+                {
+                    object: this.add.sprite(init_position_x[i], init_position_y[i], "desk_object" + i),
+                    position_x: init_position_x[i],
+                    position_y: init_position_y[i]
+                }
+            man1_obj['man1_obj' + i] =
+                {
+                    object: this.add.sprite(init_position_x[i], init_position_y[i], "man1_obj" + i),
+                    position_x: init_position_x[i],
+                    position_y: init_position_y[i]
+                }
+            man2_obj['man2_obj' + i] =
+                {
+                    object: this.add.sprite(init_position_x[i], init_position_y[i], "man2_obj" + i),
+                    position_x: init_position_x[i],
+                    position_y: init_position_y[i]
+                }
+            man3_obj['man3_obj' + i] =
+                {
+                    object: this.add.sprite(init_position_x[i], init_position_y[i], "man3_obj" + i),
+                    position_x: init_position_x[i],
+                    position_y: init_position_y[i]
+                }
+            man4_obj['man4_obj' + i] =
+                {
+                    object: this.add.sprite(init_position_x[i], init_position_y[i], "man4_obj" + i),
+                    position_x: init_position_x[i],
+                    position_y: init_position_y[i]
+                }
+            man5_obj['man5_obj' + i] =
+                {
+                    object: this.add.sprite(init_position_x[i], init_position_y[i], "man5_obj" + i),
+                    position_x: init_position_x[i],
+                    position_y: init_position_y[i]
+                }
+            //
+            if (i === 2 || i === 3) {
+                desk_object['desk_object' + i].object.flipX = true
+                man1_obj['man1_obj' + i].object.flipX = true
+                man2_obj['man2_obj' + i].object.flipX = true
+                man3_obj['man3_obj' + i].object.flipX = true
+                man4_obj['man4_obj' + i].object.flipX = true
+                man5_obj['man5_obj' + i].object.flipX = true
+            }
+            //
+            desk_object['desk_object' + i].object.setOrigin(0, 0)
+            man1_obj['man1_obj' + i].object.setOrigin(0, 0)
+            man2_obj['man2_obj' + i].object.setOrigin(0, 0)
+            man3_obj['man3_obj' + i].object.setOrigin(0, 0)
+            man4_obj['man4_obj' + i].object.setOrigin(0, 0)
+            man5_obj['man5_obj' + i].object.setOrigin(0, 0)
+            //
+            desk_object['desk_object' + i].object.alpha = 0
+            man2_obj['man2_obj' + i].object.alpha = 0
+            man3_obj['man3_obj' + i].object.alpha = 0
+            man4_obj['man4_obj' + i].object.alpha = 0
+            man5_obj['man5_obj' + i].object.alpha = 0
+        }
+        //
         const {Body, Bodies} = Phaser.Physics.Matter.Matter;
         var playerCollider = Bodies.rectangle(this.player.x, this.player.y, 13, 16, {
             isSensor: false,
@@ -193,7 +181,7 @@ export default class MainScene extends Phaser.Scene {
         this.progressBar.fillRect(6, 6, 98 * (this.progress / 100), 8);
 
         // 진행률 텍스트
-        this.progressText = this.add.text(108, 6, this.progress + '%', { fontSize: '10px', fill: '#000000' });
+        this.progressText = this.add.text(108, 6, this.progress + '%', {fontSize: '10px', fill: '#000000'});
 
 
         // 남은 시간 초기화
@@ -205,7 +193,7 @@ export default class MainScene extends Phaser.Scene {
         this.leftTimeBackground.fillRect(145, 2, 110, 20); // 배경의 크기와 위치 조정
 
         // 남은 시간 텍스트
-        this.leftTimeText = this.add.text(150, 5, '남은 시간 60초', {fontSize: '14px', fill : '#000'});
+        this.leftTimeText = this.add.text(150, 5, '남은 시간 60초', {fontSize: '14px', fill: '#000'});
 
         // 1초마다 진행률을 업데이트하는 타이머 이벤트 설정
         this.time.addEvent({
@@ -222,6 +210,7 @@ export default class MainScene extends Phaser.Scene {
         }
         this.leftTimeText.setText(`남은 시간 ${this.leftTime}초`);
     }
+
     updateProgress() {
         if (this.progress < 100) {
             this.progress += 1; // 진행률 1% 증가
@@ -242,6 +231,7 @@ export default class MainScene extends Phaser.Scene {
             this.progressText.setText('100%');
         }
     }
+
     update() {
         // this.player.update();
         const speed = 2.5;
@@ -258,9 +248,8 @@ export default class MainScene extends Phaser.Scene {
         }
         if (this.player.inputKeys.space.isDown) {
             if (this.huh.alpha === 1) {
-                this.huh.alpha = 0;
+                this.huh.alpha = 0
                 this.scheduleRandomEvent.call(this);
-                this.moveImagesBackToOriginal.call(this);
             }
         }
 
@@ -272,53 +261,30 @@ export default class MainScene extends Phaser.Scene {
 
     scheduleRandomEvent() {
         // 1초에서 5초 사이의 랜덤한 시간(밀리초 단위)을 생성
-        const randomTime = Phaser.Math.Between(2000, 5000);
-        const randomCoworker = Phaser.Math.Between(1, 10);
-        const randomCoworkerNumber = Phaser.Math.Between(1, 10);
-        let angleStep = (2 * Math.PI) / coworker_list.length;
-        console.log(randomTime)
-        this.time.delayedCall(randomTime, () => {
+        const random_time = Phaser.Math.Between(2000, 5000);
+        const random_huh = Phaser.Math.Between(0, MAXIMUM_COWORKER_NUMBER - 1);
+
+        this.time.delayedCall(random_time, () => {
             if (this.huh.alpha === 0) {
+                // 어? 생성
                 this.huh.alpha = 1
-                this.huh.x = coworker_list[randomCoworker].x + 5
-                this.huh.y = coworker_list[randomCoworker].y - 20
-
-                for (let i = 0; i < randomCoworkerNumber; i++) {
-                    let angle = i * angleStep;
-                    let radius = 25; // 중심 오브젝트로부터의 거리
-                    let targetX = coworker_list[randomCoworker].x + radius * Math.cos(angle);
-                    let targetY = coworker_list[randomCoworker].y + radius * Math.sin(angle);
-
-                    if (i !== randomCoworker) {
-                        this.tweens.add({
-                            targets: coworker_list[i],
-                            x: targetX,
-                            y: targetY,
-                            duration: 0,
-                            ease: 'Power2'
-                        });
-                        moved_coworker_list.push(coworker_list[i])
-                    }
-
+                if (random_huh === 2 || random_huh === 3) {
+                    this.huh.x = desk_object['desk_object' + random_huh].position_x + 50
+                } else {
+                    this.huh.x = desk_object['desk_object' + random_huh].position_x + 25
                 }
-                // coworker_list.forEach((image, index) => {
-                //     let angle = index * angleStep;
-                //     let radius = 25; // 중심 오브젝트로부터의 거리
-                //     let targetX = coworker_list[randomCoworker].x + radius * Math.cos(angle);
-                //     let targetY = coworker_list[randomCoworker].y + radius * Math.sin(angle);
-                //
-                //     if (index !== randomCoworker) {
-                //         this.tweens.add({
-                //             targets: image,
-                //             x: targetX,
-                //             y: targetY,
-                //             duration: 0,
-                //             ease: 'Power2'
-                //         });
-                //     }
-                // });
+                this.huh.y = desk_object['desk_object' + random_huh].position_y + 10
+
+                // random_coworker_number = Phaser.Math.Between(1, 3)
+                // random_coworker_list.length = 0
+                // while (random_coworker_list.length <= random_coworker_number){
+                //     let n = Phaser.Math.Between(1, 3)
+                // }
+
             }
         });
+
+
     }
 
     moveImagesBackToOriginal() {
@@ -333,6 +299,5 @@ export default class MainScene extends Phaser.Scene {
             });
         });
     }
-
 
 }
